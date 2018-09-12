@@ -111,7 +111,7 @@ https://github.com/maxiaoqu/maxiaoqu/tree/master/vue-treeview
 
 4、作者网站
 
-maxaioqu.com
+www.maxaioqu.com
 
 5、有问题联系
 
