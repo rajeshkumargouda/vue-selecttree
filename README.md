@@ -111,10 +111,10 @@ https://github.com/maxiaoqu/maxiaoqu/tree/master/vue-treeview
 
 4、作者网站
 
-www.maxaioqu.com
+www.maxiaoqu.com
 
 5、有问题联系
 
-maxaioqu@gmail.com
+maxiaoqu@gmail.com
 
 https://github.com/maxiaoqu/vue-selecttree/issues
