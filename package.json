@@ -1,0 +1,19 @@
+{
+	"name": "vue-selecttree",
+	"version": "1.0.0",
+	"keywords": ["vue","vue-tree","vue-selecttree","tree"],
+	"main": "index.js",
+	"repository": {
+	    "type": "git",
+	    "url": ""
+	},
+	"author": "maxiaoqu<Email:maxiaoqu@gmail.com  url:maxiaoqu.com>",
+	"license": "MIT",
+	"dependencies": {
+		"deepmerge": "^2.1.1",
+		"vue": "^2.5.17"
+	},
+	"bugs": {
+	    "url": "https://github.com/maxiaoqu/vue-selecttree/issues"
+	}
+}
