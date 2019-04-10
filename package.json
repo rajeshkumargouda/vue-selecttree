@@ -1,7 +1,7 @@
 {
 	"name": "vue-selecttree",
-	"version": "1.0.0",
-	"keywords": ["vue","vue-tree","vue-selecttree","tree"],
+	"version": "1.0.4",
+	"keywords": ["vue","tree","vue-tree","vue-selecttree"],
 	"main": "index.js",
 	"repository": {
 	    "type": "git",
