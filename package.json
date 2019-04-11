@@ -1,8 +1,9 @@
 {
 	"name": "vue-selecttree",
 	"version": "1.0.5",
-	"keywords": ["vue","tree","vue-tree","vue-selecttree"],
+	"keywords": ["vue","vue.js","tree","vue-tree","vue-selecttree","maxiaoqu"],
 	"main": "index.js",
+	"homepage": "http://github.maxiaoqu.com/vue-selecttree",
 	"repository": {
 	    "type": "git",
 	    "url": ""
@@ -13,6 +14,10 @@
 		"deepmerge": "^2.1.1",
 		"vue": "^2.5.17"
 	},
+	"repository": {
+        "type": "git",
+        "url": "https://github.com/maxiaoqu/vue-selecttree"
+    },
 	"bugs": {
 	    "url": "https://github.com/maxiaoqu/vue-selecttree/issues"
 	}
