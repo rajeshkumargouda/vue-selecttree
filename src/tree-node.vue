@@ -1,58 +1,67 @@
 <template>
     <div
-            class="ma-tree-node"
-            @click.stop="handleClick"
-            @contextmenu="($event) => this.handleContextMenu($event)"
-            v-show="node.visible"
-            :class="{'is-expanded': expanded,'is-current': tree.store.currentNode === node,'is-hidden': !node.visible,'is-focusable': !node.disabled,'is-checked': !node.disabled && node.checked}"
-            role="treeitem"
-            tabindex="-1"
-            :aria-expanded="expanded"
-            :aria-disabled="node.disabled"
-            :aria-checked="node.checked"
-            :draggable="tree.draggable"
-            @dragstart.stop="handleDragStart"
-            @dragover.stop="handleDragOver"
-            @dragend.stop="handleDragEnd"
-            @drop.stop="handleDrop"
-            ref="node">
+        class="ma-tree-node"
+        @click.stop="handleClick"
+        @contextmenu="($event) => this.handleContextMenu($event)"
+        v-show="node.visible"
+        :class="{'is-expanded': expanded,'is-current': tree.store.currentNode === node,'is-hidden': !node.visible,'is-focusable': !node.disabled,'is-checked': !node.disabled && node.checked}"
+        role="treeitem"
+        tabindex="-1"
+        :aria-expanded="expanded"
+        :aria-disabled="node.disabled"
+        :aria-checked="node.checked"
+        :draggable="tree.draggable"
+        @dragstart.stop="handleDragStart"
+        @dragover.stop="handleDragOver"
+        @dragend.stop="handleDragEnd"
+        @drop.stop="handleDrop"
+        ref="node">
         <div class="ma-tree-node__content"
              :style="{ 'padding-left': (node.level - 1) * tree.indent + 'px' }">
-        <span
-                class="ma-tree-node__expand-icon ma-icon-caret-right"
+            <span
+                v-if="!tree.expandShowRight"
+                class="ma-tree-node__expand-icon ma-icon-caret-left"
                 @click.stop="handleExpandIconClick"
                 :class="{ 'is-leaf': node.isLeaf, expanded: !node.isLeaf && expanded }">
-            <i class="iconfont icon__youjiantou maIcon"></i>
-        </span>
+                <i class="iconfont iconsanjiaoright maIcon"></i>
+            </span>
             <ma-checkbox
-                    v-if="showCheckbox"
-                    v-model="node.checked"
-                    :indeterminate="node.indeterminate"
-                    :disabled="!!node.disabled"
-                    @click.native.stop
-                    @change="handleCheckChange">
+                v-if="showCheckbox"
+                v-model="node.checked"
+                :indeterminate="node.indeterminate"
+                :disabled="!!node.disabled"
+                @click.native.stop
+                @change="handleCheckChange">
             </ma-checkbox>
             <i v-if="node.icon" :class="node.icon"></i>
             <span
-                    v-if="node.loading"
-                    class="ma-tree-node__loading-icon iconfont icon__Loading maIcon">
+                v-if="node.loading"
+                class="ma-tree-node__loading-icon iconfont iconloading maIcon">
+            </span>
+            <span
+                  v-if="tree.expandShowRight"
+                  class="ma-tree-node__expand-icon ma-icon-caret-right"
+                  @click.stop="handleExpandIconClick"
+                  :class="{ 'is-leaf': node.isLeaf }">
+                <i v-if="!node.isLeaf && expanded" class="iconfont iconjianhao maIcon"></i>
+                <i v-else class="iconfont iconjiahao maIcon"></i>
             </span>
             <node-content :node="node"></node-content>
         </div>
         <ma-transition class='aa'>
             <div
-                    class="ma-tree-node__children"
-                    v-if="!renderAfterExpand || childNodeRendered"
-                    v-show="expanded"
-                    role="group"
-                    :aria-expanded="expanded">
+                class="ma-tree-node__children"
+                v-if="!renderAfterExpand || childNodeRendered"
+                v-show="expanded"
+                role="group"
+                :aria-expanded="expanded">
                 <ma-tree-node
-                        :render-content="renderContent"
-                        v-for="child in node.childNodes"
-                        :render-after-expand="renderAfterExpand"
-                        :key="getNodeKey(child)"
-                        :node="child"
-                        @node-expand="handleChildNodeExpand">
+                    :render-content="renderContent"
+                    v-for="child in node.childNodes"
+                    :render-after-expand="renderAfterExpand"
+                    :key="getNodeKey(child)"
+                    :node="child"
+                    @node-expand="handleChildNodeExpand">
                 </ma-tree-node>
             </div>
         </ma-transition>

@@ -2,15 +2,14 @@
     @import './style/checkbox.css'
 </style>
 <template>
-    <label class="ma-checkbox"
-           :class="[
+    <label
+		:class="['ma-checkbox',
 		border && checkboxSize ? 'ma-checkbox--' + checkboxSize : '',
 		{ 'is-disabled': isDisabled },
 		{ 'is-bordered': border },
 		{ 'is-checked': isChecked }
 		]" role="checkbox" :aria-checked="indeterminate ? 'mixed': isChecked" :aria-disabled="isDisabled" :id="id">
-		<span class="ma-checkbox__input"
-              :class="{
+		<span class="ma-checkbox__input" :class="{
 			'is-disabled': isDisabled,
 			'is-checked': isChecked,
 			'is-indeterminate': indeterminate,
@@ -18,30 +17,30 @@
               aria-checked="mixed">
 			<span class="ma-checkbox__inner"></span>
 			<input
-                    v-if="trueLabel || falseLabel"
-                    class="ma-checkbox__original"
-                    type="checkbox"
-                    aria-hidden="true"
-                    :name="name"
-                    :disabled="isDisabled"
-                    :true-value="trueLabel"
-                    :false-value="falseLabel"
-                    v-model="model"
-                    @change="handleChange"
-                    @focus="focus = true"
-                    @blur="focus = false">
+				v-if="trueLabel || falseLabel"
+				class="ma-checkbox__original"
+				type="checkbox"
+				aria-hidden="true"
+				:name="name"
+				:disabled="isDisabled"
+				:true-value="trueLabel"
+				:false-value="falseLabel"
+				v-model="model"
+				@change="handleChange"
+				@focus="focus = true"
+				@blur="focus = false">
 			<input
-                    v-else
-                    class="ma-checkbox__original"
-                    type="checkbox"
-                    aria-hidden="true"
-                    :disabled="isDisabled"
-                    :value="label"
-                    :name="name"
-                    v-model="model"
-                    @change="handleChange"
-                    @focus="focus = true"
-                    @blur="focus = false">
+				v-else
+				class="ma-checkbox__original"
+				type="checkbox"
+				aria-hidden="true"
+				:disabled="isDisabled"
+				:value="label"
+				:name="name"
+				v-model="model"
+				@change="handleChange"
+				@focus="focus = true"
+				@blur="focus = false">
 		</span>
         <span class="ma-checkbox__label" v-if="$slots.default || label">
 			<slot></slot>

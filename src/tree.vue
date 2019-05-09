@@ -3,31 +3,29 @@
 </style>
 <template>
     <div
-            class="ma-tree"
-            :class="{
-      'ma-tree--highlight-current': highlightCurrent,
-      'is-dragging': !!dragState.draggingNode,
-      'is-drop-not-allow': !dragState.allowDrop,
-      'is-drop-inner': dragState.dropType === 'inner'
-    }"
-            role="tree">
-
+        class="ma-tree"
+        :class="{
+        'ma-tree--highlight-current': highlightCurrent,
+        'is-dragging': !!dragState.draggingNode,
+        'is-drop-not-allow': !dragState.allowDrop,
+        'is-drop-inner': dragState.dropType === 'inner'}"
+        role="tree">
         <ma-tree-node
-                v-for="child in root.childNodes"
-                :node="child"
-                :props="props"
-                :render-after-expand="renderAfterExpand"
-                :key="getNodeKey(child)"
-                :render-content="renderContent"
-                @node-expand="handleNodeExpand">
+            v-for="child in root.childNodes"
+            :node="child"
+            :props="props"
+            :render-after-expand="renderAfterExpand"
+            :key="getNodeKey(child)"
+            :render-content="renderContent"
+            @node-expand="handleNodeExpand">
         </ma-tree-node>
         <div class="ma-tree__empty-block" v-if="isEmpty">
             <span class="ma-tree__empty-text">{{ emptyText }}</span>
         </div>
         <div
-                v-show="dragState.showDropIndicator"
-                class="ma-tree__drop-indicator"
-                ref="dropIndicator">
+            v-show="dragState.showDropIndicator"
+            class="ma-tree__drop-indicator"
+            ref="dropIndicator">
         </div>
     </div>
 </template>
@@ -85,6 +83,10 @@
             expandOnClickNode: {
                 type: Boolean,
                 default: true
+            },
+            expandShowRight: {
+                type: Boolean,
+                default: false
             },
             checkOnClickNode: Boolean,
             checkDescendants: {
