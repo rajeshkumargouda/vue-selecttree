@@ -1,6 +1,6 @@
 {
 	"name": "vue-selecttree",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"keywords": ["vue","vue.js","tree","vue-tree","vue-selecttree","maxiaoqu"],
 	"main": "index.js",
 	"homepage": "http://github.maxiaoqu.com/vue-selecttree",
