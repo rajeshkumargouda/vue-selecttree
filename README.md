@@ -11,8 +11,9 @@
 
 ## 相关链接
 - [案例地址](http://github.maxiaoqu.com/vue-selecttree/)
-- [demo地址](https://github.com/maxiaoqu/vue-selecttree-demo/)
 - [api文档](http://blog.maxiaoqu.com/packagesApi/)
+- [demo地址](https://github.com/maxiaoqu/vue-selecttree-demo/)
+- [npmjs插件](https://www.npmjs.com/package/vue-selecttree/)
 
 ## 在main.js使用
 ```js
