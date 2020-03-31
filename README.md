@@ -1,37 +1,91 @@
-## 使用方法
-```
-import Vue from 'vue'
-import vueSelecttree from 'vue-selecttree'
+<p align="center">
+    <a href="http://www.maxiaoqu.com/">
+        <img width="300" src="http://www.maxiaoqu.com/maxiaoqu.png">
+    </a>
+</p>
+
+<h2>
+    vue-selecttree
+    <h4>一个很好用的Vue多功能树组件</h4>
+</h2>
+
+## 相关链接
+- [案例地址](http://github.maxiaoqu.com/vue-selecttree/)
+- [demo地址](https://github.com/maxiaoqu/vue-selecttree-demo/)
+- [api文档](http://blog.maxiaoqu.com/packagesApi/)
+
+## 在main.js使用
+```js
+import Vue from 'vue';
+import vueSelecttree from 'vue-selecttree';
 
 Vue.use(Vue)
 Vue.use(vueSelecttree)
-
-<vue-selecttree></vue-selecttree>
 ```
 
-### 主要维护人员
+## vue文件里使用方法
+```vue
+<template>
+    <vue-selecttree :data="data" :props="defaultProps"></vue-selecttree>
+</template>
+<script>
+    export default {
+        data () {
+            return {
+                defaultProps: {
+                    children: 'children',
+                    label: 'label'
+                },
+                data: [{
+                      label: "一级 1",
+                      name: "一级 1 000",
+                      children: [{
+                          label: "二级 1-1",
+                          name: "二级 1-1 000",
+                          children: [{
+                              label: "三级 1-1-1",
+                              name: "三级 1-1-1 000"
+                          }]
+                      }]
+                    },{
+                        label: "一级 2",
+                        name: "一级 2 000",
+                        children: [{
+                            label: "二级 2-1",
+                            name: "二级 2-1 000",
+                            children: [{
+                                label: "三级 2-1-1",
+                                name: "三级 2-1-1 000"
+                            }]
+                        }]
+                    }]
+            }
+        }
+    }
+</script>
+```
+
+## 主要维护人员
 |人员|github账号|头像|作者网站|联系邮箱|
 |---|---|---|---|---|
 |杨正炳|[maxiaoqu](https://github.com/maxiaoqu) |  ![](https://avatars1.githubusercontent.com/u/25891598?s=60&v=4)|www.maxiaoqu.com|maxiaoqu@gmail.com
 
+## 安装
+```
+npm install
+```
 
-### 说明
-1、npm地址
+## 运行
+```
+npm run serve
+```
 
-https://www.npmjs.com/package/vue-selecttree
+## 打包
+```
+npm run build
+```
 
-2、案例代码
-
-https://github.com/maxiaoqu/vue-selecttree
-
-3、案例预览
-
-github.maxiaoqu.com/vue-selecttree/
-
-4、API说明
-
-https://github.com/maxiaoqu/maxiaoqu/tree/master/vue-selecttree
-
-5、Bug反馈
-
-https://github.com/maxiaoqu/vue-selecttree/issues
+## 检查
+```
+npm run lint
+```
